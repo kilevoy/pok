@@ -84,9 +84,6 @@ export default function App() {
         <header className="mb-6 rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-xl backdrop-blur">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">GitHub Pages Edition</p>
           <h1 className="mt-2 text-3xl font-extrabold leading-tight sm:text-4xl">Калькулятор профилей ИНСИ</h1>
-          <p className="mt-2 max-w-3xl text-sm text-slate-600 sm:text-base">
-            Быстрый бесплатный калькулятор: локальные расчеты в браузере, без платного сервера.
-          </p>
         </header>
 
         <div className="grid gap-6 lg:grid-cols-[380px_minmax(0,1fr)]">
