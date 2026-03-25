@@ -251,6 +251,7 @@ body {
 
 .results-wrap {
   min-height: 180px;
+  overflow-x: auto;
 }
 
 .placeholder {
@@ -266,6 +267,8 @@ body {
 
 .results-table {
   width: 100%;
+  min-width: 980px;
+  table-layout: fixed;
   border-collapse: collapse;
   overflow: hidden;
   border: 1px solid #bfdbfe;
@@ -275,8 +278,9 @@ body {
 .results-table th,
 .results-table td {
   border-bottom: 1px solid #dbeafe;
-  padding: 7px 9px;
+  padding: 8px 10px;
   font-size: 11px;
+  vertical-align: middle;
 }
 
 .results-table th {
@@ -284,6 +288,57 @@ body {
   color: #1e3a8a;
   font-weight: 800;
   text-transform: uppercase;
+  text-align: center;
+  line-height: 1.25;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.results-table td {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.results-table th:nth-child(1),
+.results-table td:nth-child(1) {
+  width: 11%;
+  text-align: center;
+}
+
+.results-table th:nth-child(2),
+.results-table td:nth-child(2) {
+  width: 11%;
+  text-align: center;
+}
+
+.results-table th:nth-child(3),
+.results-table td:nth-child(3) {
+  width: 12%;
+  text-align: center;
+}
+
+.results-table th:nth-child(4),
+.results-table td:nth-child(4) {
+  width: 16%;
+  text-align: right;
+}
+
+.results-table th:nth-child(5),
+.results-table td:nth-child(5) {
+  width: 18%;
+  text-align: right;
+}
+
+.results-table th:nth-child(6),
+.results-table td:nth-child(6) {
+  width: 16%;
+  text-align: right;
+}
+
+.results-table th:nth-child(7),
+.results-table td:nth-child(7) {
+  width: 16%;
+  text-align: right;
 }
 
 .results-table tbody tr:nth-child(even) {
