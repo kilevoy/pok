@@ -82,8 +82,7 @@ export default function App() {
     <main className="min-h-screen bg-[radial-gradient(circle_at_10%_20%,#eff6ff,transparent_40%),radial-gradient(circle_at_90%_0%,#fee2e2,transparent_35%),#f8fafc] px-4 py-8 font-sans text-slate-900">
       <div className="mx-auto max-w-6xl">
         <header className="mb-6 rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-xl backdrop-blur">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">GitHub Pages Edition</p>
-          <h1 className="mt-2 text-3xl font-extrabold leading-tight sm:text-4xl">Калькулятор профилей ИНСИ</h1>
+          <h1 className="font-['Exo_2'] text-2xl font-bold leading-tight sm:text-3xl">Калькулятор профилей ИНСИ</h1>
         </header>
 
         <div className="grid gap-6 lg:grid-cols-[380px_minmax(0,1fr)]">
