@@ -2,6 +2,7 @@ const STORAGE_KEY = 'powder-calculator-settings-v1';
 
 const defaultMaterials = [
   { thickness: 0.5, width: 1250, mass: 4.34, defaultPrice: 115000 },
+  { thickness: 0.65, width: 1250, mass: 5.79, defaultPrice: null },
   { thickness: 0.7, width: 1250, mass: 6.273, defaultPrice: 105000 },
   { thickness: 0.8, width: 1250, mass: 7.7, defaultPrice: null },
   { thickness: 0.9, width: 1250, mass: 8.658, defaultPrice: null },
@@ -281,11 +282,16 @@ function appendCell(row, value) {
 }
 
 function saveSettings() {
+  const materialPriceMap = {};
+  state.materials.forEach((mat) => {
+    materialPriceMap[String(mat.thickness)] = mat.defaultPrice == null ? '' : String(mat.defaultPrice);
+  });
+
   const payload = {
     paintingPrice: dom.paintingPrice.value,
     processingRate: dom.processingRate.value,
     isCollapsed: state.isCollapsed,
-    materialPrices: state.materials.map((mat) => (mat.defaultPrice == null ? '' : String(mat.defaultPrice))),
+    materialPrices: materialPriceMap,
   };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
 }
@@ -306,7 +312,14 @@ function loadSettings() {
     if (settings.processingRate != null) {
       dom.processingRate.value = settings.processingRate;
     }
-    if (Array.isArray(settings.materialPrices)) {
+    if (settings.materialPrices && typeof settings.materialPrices === 'object' && !Array.isArray(settings.materialPrices)) {
+      state.materials.forEach((mat) => {
+        const raw = settings.materialPrices[String(mat.thickness)];
+        if (raw !== undefined) {
+          mat.defaultPrice = raw === '' ? null : Number(raw);
+        }
+      });
+    } else if (Array.isArray(settings.materialPrices)) {
       settings.materialPrices.forEach((value, index) => {
         if (index < state.materials.length) {
           state.materials[index].defaultPrice = value === '' ? null : Number(value);
