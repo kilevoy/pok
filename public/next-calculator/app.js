@@ -1,7 +1,8 @@
 const STORAGE_KEY = 'powder-calculator-settings-v1';
 
 const defaultMaterials = [
-  { thickness: 0.5, width: 1250, mass: 4.34, defaultPrice: 115000 },
+  { thickness: 0.45, width: 1250, mass: 4.34, defaultPrice: null },
+  { thickness: 0.5, width: 1250, mass: 4.88, defaultPrice: 115000 },
   { thickness: 0.65, width: 1250, mass: 6.273, defaultPrice: null },
   { thickness: 0.7, width: 1250, mass: 6.754, defaultPrice: 105000 },
   { thickness: 0.8, width: 1250, mass: 7.7, defaultPrice: null },
