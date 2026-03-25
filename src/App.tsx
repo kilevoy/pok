@@ -89,7 +89,7 @@ export default function App() {
 
   const wasteState = useMemo(() => {
     if (!result) return 'neutral'
-    return result.wastePercentage > 10 ? 'danger' : 'good'
+    return result.wastePercentage > 5 ? 'danger' : 'good'
   }, [result])
 
   useEffect(() => {
@@ -193,7 +193,7 @@ export default function App() {
                     wasteState === 'danger' ? 'bg-rose-100 text-rose-700' : 'bg-emerald-100 text-emerald-700'
                   }`}
                 >
-                  {wasteState === 'danger' ? 'Отход выше нормы' : 'Оптимальный раскрой'}
+                  {wasteState === 'danger' ? 'Отход > 5%' : 'Отход <= 5%'}
                 </span>
               )}
             </div>
@@ -211,7 +211,13 @@ export default function App() {
             )}
 
             {result && (
-              <div className="space-y-4">
+              <div
+                className={`space-y-4 rounded-2xl p-3 ${
+                  wasteState === 'danger'
+                    ? 'border border-rose-200 bg-rose-50'
+                    : 'border border-emerald-200 bg-emerald-50'
+                }`}
+              >
                 <div className="rounded-2xl bg-slate-900 p-4 text-white">
                   <p className="text-xs uppercase tracking-widest text-slate-300">Профиль</p>
                   <p className="mt-2 text-xl font-bold">
