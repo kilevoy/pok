@@ -21,52 +21,56 @@
         </header>
 
         <section class="layout">
-          <article class="card card-materials" id="materialsCard">
-            <div class="card-header">
-              <h2>Цены сырья</h2>
-              <div class="card-actions">
-                <button type="button" class="btn btn-ghost btn-sm" id="collapseBtn">Свернуть</button>
-                <button type="button" class="btn btn-outline btn-sm" id="editPricesBtn">
-                  <span id="editPricesText">Редактировать цены</span>
-                </button>
+          <div class="left-column">
+            <article class="card card-materials" id="materialsCard">
+              <div class="card-header">
+                <h2>Цены сырья</h2>
+                <div class="card-actions">
+                  <button type="button" class="btn btn-ghost btn-sm" id="collapseBtn">Свернуть</button>
+                  <button type="button" class="btn btn-outline btn-sm" id="editPricesBtn">
+                    <span id="editPricesText">Редактировать цены</span>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="card-body" id="materialPricesBody">
-              <div id="materialPrices" class="materials-list"></div>
-              <div id="pricesActions" class="prices-actions hidden">
-                <button type="button" class="btn btn-primary btn-sm" id="savePricesBtn">Сохранить цены</button>
-                <button type="button" class="btn btn-outline btn-sm" id="resetPricesBtn">Сбросить</button>
+              <div class="card-body" id="materialPricesBody">
+                <div id="materialPrices" class="materials-list"></div>
+                <div id="pricesActions" class="prices-actions hidden">
+                  <button type="button" class="btn btn-primary btn-sm" id="savePricesBtn">Сохранить цены</button>
+                  <button type="button" class="btn btn-outline btn-sm" id="resetPricesBtn">Сбросить</button>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="card card-params">
-            <div class="card-header">
-              <h2>Параметры расчета</h2>
-            </div>
-            <div class="card-body">
-              <label class="field">
-                <span>Цена окраски (руб/м²)</span>
-                <input type="number" id="paintingPrice" class="input" value="400" step="0.01" min="0" />
-              </label>
-              <label class="field">
-                <span>Ставка переработки (руб/т)</span>
-                <input type="number" id="processingRate" class="input" value="40000" step="0.01" min="0" />
-              </label>
-              <button type="button" class="btn btn-primary btn-full" id="calculateBtn">Рассчитать стоимость</button>
-            </div>
-          </article>
-
-          <article class="card card-results">
-            <div class="card-header">
-              <h2>Результаты</h2>
-            </div>
-            <div class="card-body">
-              <div id="resultsContainer" class="results-wrap">
-                <p class="placeholder">Нажмите «Рассчитать стоимость», чтобы получить таблицу расчета.</p>
+            <article class="card card-params">
+              <div class="card-header">
+                <h2>Параметры расчета</h2>
               </div>
-            </div>
-          </article>
+              <div class="card-body">
+                <label class="field">
+                  <span>Цена окраски (руб/м²)</span>
+                  <input type="number" id="paintingPrice" class="input" value="400" step="0.01" min="0" />
+                </label>
+                <label class="field">
+                  <span>Ставка переработки (руб/т)</span>
+                  <input type="number" id="processingRate" class="input" value="40000" step="0.01" min="0" />
+                </label>
+                <button type="button" class="btn btn-primary btn-full" id="calculateBtn">Рассчитать стоимость</button>
+              </div>
+            </article>
+          </div>
+
+          <div class="right-column">
+            <article class="card card-results">
+              <div class="card-header">
+                <h2>Результаты</h2>
+              </div>
+              <div class="card-body">
+                <div id="resultsContainer" class="results-wrap">
+                  <p class="placeholder">Нажмите «Рассчитать стоимость», чтобы получить таблицу расчета.</p>
+                </div>
+              </div>
+            </article>
+          </div>
         </section>
       </div>
     </main>
